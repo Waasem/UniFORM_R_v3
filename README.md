@@ -22,11 +22,47 @@ devtools::install_github("Waasem/UniFORM_R_v3")
 
 ## Usage
 
+### Basic Example
+
 ```r
 library(UniFORM)
 
-# Example usage will be added as the package develops
+# Create sample immunofluorescence intensity data
+set.seed(123)
+data <- matrix(rnorm(100), nrow=10, ncol=10)
+colnames(data) <- paste0("Marker_", 1:10)
+
+# Normalize using default quantile method
+normalized_data <- normalize_uniform(data)
+
+# View results
+head(normalized_data)
 ```
+
+### Batch-Aware Normalization
+
+```r
+# Create sample data with batch information
+batch <- rep(1:2, each=5)
+
+# Apply batch-aware normalization
+normalized_batch <- normalize_uniform(data, method="quantile", batch=batch)
+```
+
+### Different Normalization Methods
+
+```r
+# Quantile normalization (default)
+norm_quantile <- normalize_uniform(data, method="quantile")
+
+# Median normalization
+norm_median <- normalize_uniform(data, method="median")
+
+# Z-score normalization
+norm_zscore <- normalize_uniform(data, method="zscore")
+```
+
+For more examples, see the scripts in `inst/examples/`.
 
 ## License
 
