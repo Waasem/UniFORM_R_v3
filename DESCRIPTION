@@ -1,0 +1,25 @@
+Package: UniFORM
+Type: Package
+Title: Universal ImmunoFluorescence nORMalization
+Version: 3.0.0
+Authors@R: c(
+    person("Waasem", role = c("aut", "cre"),
+           email = "waasem@example.com")
+    )
+Description: An R implementation of the UniFORM (Universal ImmunoFluorescence 
+    nORMalization) pipeline for normalizing multiplex immunofluorescence data. 
+    This package provides robust normalization methods to harmonize intensity 
+    measurements across different samples, batches, and experimental conditions.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.0.0
+Depends: 
+    R (>= 3.5.0)
+Imports:
+    stats,
+    utils
+Suggests:
+    testthat (>= 3.0.0)
+URL: https://github.com/Waasem/UniFORM_R_v3
+BugReports: https://github.com/Waasem/UniFORM_R_v3/issues
